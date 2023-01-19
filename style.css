@@ -4,6 +4,7 @@
     display: grid;
     width: 500px;
     height: 500px;
+    user-select: none;
     /* grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); */
 }
