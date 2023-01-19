@@ -7,11 +7,18 @@
     /* grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr); */
 }
+
 /* 
 .grid-element {
     border: 1px red solid;
 } */
 
-.colored{
-    background-color: red;
+.colored {
+    
+    background-color: var(--color) ;
+}
+
+:root{
+    --color : black
+
 }

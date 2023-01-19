@@ -38,9 +38,9 @@ function slideValue() {
 }
 
 function changeColor(e) {
-    
-    e.target.classList.add('colored')
+console.log(e.target)
+    e.target.style.cssText = `background-color: ${color.value}`
 
 }
+let color = document.querySelector('#color')
 
-console.log(document.querySelector('#color').value)
