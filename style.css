@@ -13,13 +13,3 @@
 .grid-element {
     border: 1px red solid;
 } */
-
-.colored {
-    
-    background-color: var(--color) ;
-}
-
-:root{
-    --color : black
-
-}
