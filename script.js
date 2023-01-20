@@ -1,8 +1,12 @@
 //set DOM elements to variables
 const container = document.querySelector('.container')
-
 let amount = document.querySelector('#range').value
 let rangeText = document.querySelector('.rangeText')
+let color = document.querySelector('#color')
+let buttonClear = document.querySelector('.clear')
+let buttonRainbow = document.querySelector('.rainbow')
+let buttonColor = document.querySelector('.colorBtn')
+let buttonErase = document.querySelector('.erase')
 
 let mouseDown = false
 document.body.onmousedown = () => mouseDown = true
@@ -27,14 +31,13 @@ function createDiv() {
 
 }
 
-//create multuple divs
-
+//get range input
 document.querySelector('#range').addEventListener('change', createDiv)
 document.querySelector('#range').addEventListener('input', slideValue)
-//container.addEventListener('mouseover', changeColor)
 
 
 
+//display range value
 function slideValue() {
     amount = document.querySelector('#range').value
     rangeText.textContent = `${amount}X${amount}`
@@ -43,12 +46,9 @@ function slideValue() {
 
 //color divs
 function changeColor(e) {
-
     if (e.type == 'mouseover' && !mouseDown) {
         return
-
     } else if (drawMode == 'color') {
-
         e.target.style.cssText = `background-color: ${color.value}`
     } else if (drawMode == 'rainbow') {
         let randomR = Math.floor(Math.random() * 256)
@@ -58,25 +58,14 @@ function changeColor(e) {
     } else if (drawMode == 'erase') {
         e.target.style.cssText = `background-color: white`
     }
-
-
-
 }
-
-let color = document.querySelector('#color')
-
-let buttonClear = document.querySelector('.clear')
-let buttonRainbow = document.querySelector('.rainbow')
-let buttonColor = document.querySelector('.colorBtn')
-let buttonErase = document.querySelector('.erase')
-buttonClear.addEventListener('click', clear)
 
 function clear() {
     container.innerHTML = ''
     createDiv()
 }
 
-
+buttonClear.addEventListener('click', clear)
 buttonRainbow.addEventListener('click', rainbowDraw)
 buttonColor.addEventListener('click', colorDraw)
 buttonErase.addEventListener('click', erase)
@@ -85,7 +74,7 @@ function rainbowDraw() {
     drawMode = 'rainbow'
     buttonRainbow.style.cssText = ' background-color: #bb7f7f'
     buttonColor.style.cssText = ' background-color: #F0DBDB'
-      buttonErase.style.cssText = ' background-color: #F0DBDB'
+    buttonErase.style.cssText = ' background-color: #F0DBDB'
 }
 
 function colorDraw() {
